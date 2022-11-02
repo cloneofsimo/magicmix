@@ -31,10 +31,12 @@ $k_{min ratio}$ and $k_{max ratio}$ determines the range of process. If $K_{max}
 # Basic Usage
 
 In `magic_mix`, you can find the implementation of MagicMix with Stable Diffusion.
+Before running, fill in the `.env` file with Huggingface token for Stable Diffusion, and load_dotenv().
 
 ```python
 from magic_mix import magic_mix_single_image
 
+load_dotenv(verbose=True)
 image = Image.open(input_image_path).convert("RGB")
 
 mixed_sementics = magic_mix_single_image(
