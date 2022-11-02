@@ -4,6 +4,13 @@
 <p align="center">
 <img  src="contents/test.jpg">
 </p>
+<!-- #endregion -->
+
+<!-- #region -->
+<p align="center">
+<img  src="contents/test_cat.jpg">
+</p>
+<!-- #endregion -->
 
 > Output from this repo's implementation of MagicMix.
 > Original Image, to $\nu$ = 0.75, 0.9 respectively.
