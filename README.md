@@ -13,9 +13,9 @@
 <!-- #endregion -->
 
 > Output from this repo's implementation of MagicMix.
-> Original Image, to $\nu$ = 0.75, 0.9 respectively.
+> Original Image, $\nu$ = 0.75, $\nu$ = 0.9 respectively.
 
-Implementation of MagicMix with Stable Diffusion (https://arxiv.org/abs/2210.16056) in PyTorch. _This is Unofficial Implementation_.
+Implementation of MagicMix with Stable Diffusion (https://arxiv.org/abs/2210.16056) in PyTorch. _This is unofficial Implementation_.
 
 # Installation
 
@@ -23,22 +23,22 @@ Implementation of MagicMix with Stable Diffusion (https://arxiv.org/abs/2210.160
 pip install git+https://github.com/cloneofsimo/magicmix.git
 ```
 
-To get it to work in GPU, Install nessary pytorch versions and cuda versions.
+To get it to work with CUDA GPU, install necessary pytorch and cuda versions.
 
 # Explanations
 
-There are three main parameters for MagicMix. $K_{min} = k_{min ratio} T$, $K_{max} = k_{max ratio} T$, and $\nu$. $T$ is the number of samplings for schedulers.
+There are three main parameters for MagicMix. $K_{min} = k_{min ratio} T$, $K_{max} = k_{max ratio} T$, and $\nu$. $T$ is the number of sampling steps for the scheduler.
 
 ![magicmix](contents/magicmix.png)
 
-Basically, $\nu$ determines _how little layout image_ (in the photo above, the corgi) is going to effect the diffusion process. Greater the $\nu$, more the content is going to effect.
+Basically, $\nu$ determines _how little layout image_ (in the photo above, the corgi) is going to effect the diffusion process. Greater the $\nu$, greater the content is going to effect.
 
-$k_{min ratio}$ and $k_{max ratio}$ determines the range of process. If $K_{max}$ is large, this will have the same effect as loosing much original layout image. If $K_{min}$ is large, this will have the effect of letting content sementic to have effect more freely.
+$k_{min ratio}$ and $k_{max ratio}$ determines the range of the mixing process. If $K_{max}$ is large, this will have the same effect as loosing much info of the original layout image. If $K_{min}$ is large, this will have the effect of letting content semantic to have effect more freely.
 
 # Basic Usage
 
-In `magic_mix`, you can find the implementation of MagicMix with Stable Diffusion.
-Before running, fill in the `.env` file with Huggingface token for Stable Diffusion, and load_dotenv().
+In the package `magic_mix`, you can find the implementation of MagicMix with Stable Diffusion.
+Before running, fill in the variable `HF_TOKEN` in `.env` file with Huggingface token for Stable Diffusion, and load_dotenv().
 
 ```python
 from magic_mix import magic_mix_single_image
